@@ -4,6 +4,10 @@ import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.taerock.boottest.entity.Board;
 
 import java.util.Optional;
@@ -99,5 +103,22 @@ public class BoardRepositoryTests {
 
     }
 
+    @Test
+    public void testPage1(){
+
+        //pageable -> 페이징을 위한 인터페이스 타입, descending = orderby desc
+        Pageable pageable = PageRequest.of(0,10, Sort.by("bno").descending());
+
+        Page<Board> result = repository.findAll(pageable);
+
+        log.info("Total: "+result.getTotalElements());
+        log.info("TotalPages: "+result.getTotalPages());
+        log.info("Current: "+result.getNumber());
+        log.info("Size: "+result.getSize());
+
+        result.getContent().forEach(board -> log.info(board));
+
+
+    }
 
 }
