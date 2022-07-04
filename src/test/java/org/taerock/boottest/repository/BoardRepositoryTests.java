@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.taerock.boottest.entity.Board;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
@@ -120,5 +121,22 @@ public class BoardRepositoryTests {
 
 
     }
+
+    @Test
+    public void testQueryMethod1(){
+        String keyword = "5";
+        List<Board> list = repository.findByTitleContaining(keyword);
+        log.info(list);
+    }
+
+    @Test
+    public void testQueryMethod2(){
+        String keyword = "5";
+        Pageable pageable = PageRequest.of(0,5,Sort.by("bno").descending());
+        Page<Board> list = repository.findByTitleContaining(keyword,pageable);
+
+        log.info(list);
+    }
+
 
 }
