@@ -1,5 +1,6 @@
 package org.taerock.boottest.entity;
 
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -8,7 +9,12 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "t_board")
-// 테이브명 지정
+// 테이블명 지정
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Getter
+@ToString
 public class Board {
 
     @Id
