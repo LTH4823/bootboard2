@@ -6,7 +6,12 @@
     <title>Title</title>
 </head>
 <body>
-        <h1 th:text="Welcome">Hello</h1>
-        <h2 th:text="${msg}">Word</h2>
+<h1 th:text="Welcome">Hello</h1>
+<!--msg에 레드라인이 걸리는데 이는 settings 설정 변경으로 해결 가능-->
+<h2 th:text="${msg}">Word</h2>
+
+<!--다른 방식 출력-->
+<!--/* <h2>[[${msg}]] </h2>*/-->
+
 </body>
 </html>

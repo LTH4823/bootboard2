@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--thymeleaf 사용을 위한 설정-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex2</title>
+</head>
+<body>
+
+    <div>[[${list}]]</div>
+    <div>[[${result}]]</div>
+
+    <script th:inline="javascript">
+
+        const list = [[${list}]]
+        const result = [[${result}]]
+
+        console.log(list)
+        console.log(result)
+
+    </script>
+
+
+</body>
+</html>
