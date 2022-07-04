@@ -27,7 +27,10 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-//    테스트 코드에 적용을 위한 설정
+    // 뒤에 버전이 붙지만 boot에서는 제외해도 가능하며 자동으로 최신버전 로딩 해줌
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    //    테스트 코드에 적용을 위한 설정
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
 
