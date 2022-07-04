@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.taerock.boottest.entity.Board;
 
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 @SpringBootTest
@@ -39,5 +40,23 @@ public class BoardRepositoryTests {
         });
 
     }
+
+
+    @Test
+    public void testRead(){
+
+        Integer bno = 100;
+
+        //NPE 방지를 위해 사용하는 타입
+        Optional<Board> result = repository.findById(bno);
+
+        Board board = result.get();
+
+        log.info(board);
+
+    }
+
+
+
 
 }
