@@ -43,7 +43,7 @@ public class BoardRepositoryTests {
 
 
     @Test
-    public void testRead(){
+    public void testRead() {
 
         Integer bno = 100;
 
@@ -56,7 +56,48 @@ public class BoardRepositoryTests {
 
     }
 
+    @Test
+    public void testUpdate() {
 
+        // 실행 시 기본 100이 있다면 자동으로 update 처리를 해준다.
+        // 이 방식을 사용시 regDate가 null 될 수 있다.
+//        Board board = Board.builder()
+//                .bno(100)
+//                .title("100 Title")
+//                .content("100 Content")
+//                .writer("user11")
+//                .build();
+//
+//        repository.save(board);
+
+        Integer bno = 100;
+
+        //NPE 방지를 위해 사용하는 타입
+        Optional<Board> result = repository.findById(bno);
+
+        Board board = result.get();
+        //(주류 방식)
+        board.changeTitle("100title...updated");
+        board.changeContent("100content...updated");
+
+        repository.save(board);
+
+        log.info(board);
+
+    }
+
+
+    @Test
+    public void testDelete() {
+
+        //없는 번호 삭제
+//        Integer bno = 500;
+
+        Integer bno = 100;
+        repository.deleteById(bno);
+
+
+    }
 
 
 }

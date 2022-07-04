@@ -37,4 +37,14 @@ public class Board {
     //하이버네이트에 있는 어노테이션
     private LocalDateTime updateDate;
 
+    //직접 선언해서 수정하는 방식  -> 문제 DB의 데이터와 객체 값이 불일치 되는 상황이 생길 수 있음 (주류 방식)
+    public void changeTitle(String title){
+        this.title = title;
+    }
+
+    public void changeContent(String title){
+        this.content = content;
+    }
+
+
 }
