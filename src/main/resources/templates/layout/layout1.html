@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--layout 설정1-->
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h1>Header</h1>
+</div>
+
+<div layout:fragment="content">
+    <h1>Content</h1>
+</div>
+
+<div>
+    <h1>Footer</h1>
+</div>
+
+<!--레이아웃에 스크립트를 적용할 때-->
+<script th:inline="javascript"></script>
+
+<th:block layout:fragment="script">
+
+</th:block>
+
+</body>
+</html>

@@ -46,4 +46,11 @@ public class SampleController {
         model.addAttribute("list", list);
     }
 
+    @GetMapping("/ex3")
+    public void ex3(Model model) {
+        List<String> list = Arrays.asList("aaa", "bbb", "ccc", "ddd");
+        model.addAttribute("list", list);
+    }
+
+
 }

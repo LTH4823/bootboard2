@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--layout 설정2-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout1.html}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ex3 html</title>
+</head>
+
+<body>
+
+<div layout:fragment="content">
+    <h1>Ex3 Content Change Test</h1>
+</div>
+
+<!--레이아웃이 기본 뼈대 이기 떄문에 기본적으로는 레이아웃에서 다 되있서야 한다.-->
+<script layout:fragment="script" th:inline="javascript">
+    const list = [[${list}]]
+</script>
+
+
+</body>
+
+</html>
