@@ -24,6 +24,11 @@ public class BoardRepositoryTests {
     private BoardRepository repository;
 
     @Test
+    public void testSearch1(){
+        repository.search1();
+    }
+
+    @Test
     public void testInsert() {
 
         //log
