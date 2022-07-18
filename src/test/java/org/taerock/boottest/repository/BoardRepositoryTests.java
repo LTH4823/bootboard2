@@ -24,8 +24,22 @@ public class BoardRepositoryTests {
     private BoardRepository repository;
 
     @Test
+    public void testSearchAll(){
+        String[] types = new String[]{"t","c","w"};
+        String keyword = "5";
+
+        Pageable pageable = PageRequest.of(0,10,Sort.by("bno").descending());
+
+        repository.searchAll(types,keyword, pageable);
+
+    }
+
+    @Test
     public void testSearch1(){
-        repository.search1();
+
+        Pageable pageable = PageRequest.of(0,10, Sort.by("bno").descending());
+
+        repository.search1(pageable);
     }
 
     @Test
