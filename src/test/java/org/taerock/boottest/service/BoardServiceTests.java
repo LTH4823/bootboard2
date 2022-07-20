@@ -14,6 +14,15 @@ public class BoardServiceTests {
     private BoardService boardService;
 
     @Test
+    public void readOne(){
+
+        Integer bno = 100;
+        BoardDTO result = boardService.readOne(bno);
+        log.info("======================");
+        log.info(result);
+    }
+
+    @Test
     public void testRegister(){
         BoardDTO dto = BoardDTO.builder()
                 .title("Test Register..")

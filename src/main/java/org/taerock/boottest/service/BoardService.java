@@ -6,4 +6,6 @@ public interface BoardService {
 
     Integer register(BoardDTO boardDTO);
 
+    BoardDTO readOne(Integer bno);
+
 }

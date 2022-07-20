@@ -9,6 +9,8 @@ import org.taerock.boottest.dto.BoardDTO;
 import org.taerock.boottest.entity.Board;
 import org.taerock.boottest.repository.BoardRepository;
 
+import java.util.Optional;
+
 @Service
 @Log4j2
 @RequiredArgsConstructor
@@ -29,6 +31,16 @@ public class BoardServiceImpl implements BoardService{
         Board result =  boardRepository.save(board);
 
         return result.getBno();
+    }
+
+    @Override
+    public BoardDTO readOne(Integer bno) {
+
+        Optional<Board> result = boardRepository.findById(bno);
+        Board board = result.orElseThrow();
+        BoardDTO boardDTO = modelMapper.map(board, BoardDTO.class);
+
+        return boardDTO;
     }
 
 }
