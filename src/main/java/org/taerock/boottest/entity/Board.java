@@ -42,7 +42,7 @@ public class Board extends BaseEntity{
         this.title = title;
     }
 
-    public void changeContent(String title){
+    public void changeContent(String content){
         this.content = content;
     }
 

@@ -8,4 +8,6 @@ public interface BoardService {
 
     BoardDTO readOne(Integer bno);
 
+    void modify(BoardDTO boardDTO);
+
 }
