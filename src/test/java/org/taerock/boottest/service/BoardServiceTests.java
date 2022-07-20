@@ -14,6 +14,12 @@ public class BoardServiceTests {
     private BoardService boardService;
 
     @Test
+    public void remove(){
+        Integer bno = 98;
+        boardService.remove(bno);
+    }
+
+    @Test
     public void modify(){
 
         BoardDTO target = BoardDTO.builder()
