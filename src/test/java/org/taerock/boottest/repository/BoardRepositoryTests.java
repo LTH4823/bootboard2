@@ -30,7 +30,9 @@ public class BoardRepositoryTests {
 
         Pageable pageable = PageRequest.of(0,10,Sort.by("bno").descending());
 
-        repository.searchAll(types,keyword, pageable);
+        Page<Board> result = repository.searchAll(types,keyword, pageable);
+
+        log.info(result);
 
     }
 
