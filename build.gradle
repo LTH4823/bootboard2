@@ -45,6 +45,9 @@ dependencies {
 
     implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
 
+    //model mapper
+    implementation 'org.modelmapper:modelmapper:3.1.0'
+
     annotationProcessor(
 
             "javax.persistence:javax.persistence-api",
@@ -52,6 +55,7 @@ dependencies {
             "javax.annotation:javax.annotation-api",
 
             "com.querydsl:querydsl-apt:${queryDslVersion}:jpa")
+
 
 }
 
