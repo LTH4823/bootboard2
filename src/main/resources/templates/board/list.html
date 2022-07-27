@@ -54,11 +54,11 @@
                         <th scope="col">RegDate</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody th:with="link = ${pageRequestDTO.getLink()}">
                     <tr th:each="dto:${responseDTO.dtoList}">
                         <th scope="row">[[${dto.bno}]]</th>
                         <td>
-                            [[${dto.title}]]
+                            <a th:href="|@{/board/read(bno = ${dto.bno})}&${link}|">[[${dto.title}]]</a>
                         </td>
                         <td>[[${dto.writer}]]</td>
                         <!--                      /* 존 단순 출력시 2022-05-20T09....... 식으로 나옴 아래의 방식으로 format을 잡아 출력시 문제가 해결됨 */ -->
