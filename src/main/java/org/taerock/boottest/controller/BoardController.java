@@ -44,6 +44,10 @@ public class BoardController {
             return "redirect:/board/register";
         }
 
+        Integer bno = boardService.register(boardDTO);
+
+        rttr.addFlashAttribute("result", bno);
+
         return "redirect:/board/list";
     }
 

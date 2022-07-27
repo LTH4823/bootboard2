@@ -48,13 +48,13 @@
 
 
 <script layout:fragment="script" th:inline="javascript">
-
+    <!--인라인 처리 에러 전체를 객체로 변환 처리-->
     const errors = [[${errors}]]
     console.log(errors)
 
     let errorMsg = ''
 
-    if(errors){
+    if (errors) {
         for (let i = 0; i < errors.length; i++) {
             errorMsg += `${errors[i].field}은(는) ${errors[i].code} \n`
         }
