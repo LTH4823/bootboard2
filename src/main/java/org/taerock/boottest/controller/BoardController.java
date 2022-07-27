@@ -24,11 +24,11 @@ public class BoardController {
 
     private final BoardService boardService;
 
-    @GetMapping("read")
-    public void read(Integer bno, PageResponseDTO pageResponseDTO, Model model) {
+    @GetMapping("/read")
+    public void read(Integer bno, PageRequestDTO pageRequestDTO, Model model) {
 
         log.info("read bno: " + bno);
-        log.info("read page: " + pageResponseDTO);
+        log.info("read page: " + pageRequestDTO);
 
         BoardDTO boardDTO = boardService.readOne(bno);
 
