@@ -50,6 +50,10 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+    //Swagger setting
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+
     annotationProcessor(
 
             "javax.persistence:javax.persistence-api",
