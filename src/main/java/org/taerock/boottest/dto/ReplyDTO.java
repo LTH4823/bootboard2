@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Data
@@ -15,9 +16,14 @@ import java.time.LocalDateTime;
 public class ReplyDTO {
 
     private Long rno;
+
+    @NotNull
     private Integer bno;
 
+    @NotNull
     private String replyText;
+
+    @NotNull
     private String replyer;
 
     private LocalDateTime regDate, modDate;
