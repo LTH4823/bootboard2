@@ -14,6 +14,7 @@ import java.util.Map;
 
 @RestControllerAdvice
 @Log4j2
+//직접적인 예외처리를 하기위한 코드
 public class CustomRestAdvice {
 
     @ExceptionHandler(BindException.class)
@@ -24,6 +25,7 @@ public class CustomRestAdvice {
 
         Map<String, String> errorMap = new HashMap<>();
 
+        //실행되는 컨트롤러의 에러에 대한 예외처리 400에러로 진행
         if (e.hasErrors()){
             BindingResult bindingResult = e.getBindingResult();
 
