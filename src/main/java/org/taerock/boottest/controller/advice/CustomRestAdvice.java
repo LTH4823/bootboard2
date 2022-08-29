@@ -1,4 +1,4 @@
-package org.taerock.boottest.advice;
+package org.taerock.boottest.controller.advice;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;

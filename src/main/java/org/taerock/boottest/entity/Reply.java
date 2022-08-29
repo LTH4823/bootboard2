@@ -6,10 +6,10 @@ import javax.persistence.*;
 
 //독립적 entity
 @Entity
-//@Table(name = "t_reply")
-@Table(name = "Reply", indexes = {
-        @Index(name = "idx_reply_board_bno", columnList = "board_bno")
-})
+@Table(name = "t_reply")
+//@Table(name = "Reply", indexes = {
+//        @Index(name = "idx_reply_board_bno", columnList = "board_bno")
+//})
 @Getter
 @ToString
 @Builder

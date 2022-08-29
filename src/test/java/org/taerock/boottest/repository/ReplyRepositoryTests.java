@@ -7,6 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.taerock.boottest.entity.Board;
 import org.taerock.boottest.entity.Reply;
 
+import java.util.Optional;
+
 @SpringBootTest
 @Log4j2
 public class ReplyRepositoryTests {
@@ -32,7 +34,20 @@ public class ReplyRepositoryTests {
 
         }
 
+    }
+
+    @Test
+    public void testRead(){
+
+        Long rno = 99L;
+
+        Optional<Reply> result = replyRepository.findById(rno);
+
+        Reply reply = result.orElseThrow();
+
+        log.info(reply);
 
     }
+
 
 }
