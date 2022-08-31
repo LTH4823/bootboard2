@@ -4,6 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 import org.taerock.boottest.entity.Board;
 import org.taerock.boottest.entity.Reply;
 
@@ -36,6 +37,7 @@ public class ReplyRepositoryTests {
 
     }
 
+    @Transactional
     @Test
     public void testRead(){
 
@@ -46,7 +48,9 @@ public class ReplyRepositoryTests {
         Reply reply = result.orElseThrow();
 
         log.info(reply);
-
+        log.info(reply.getReplyText());
+        log.info(reply.getReplyer());
+        log.info(reply.getBoard());
     }
 
 
